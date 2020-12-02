@@ -155,6 +155,16 @@ class SpeciesTreeDrawer():
         d.saveSvg(url)
         return(d)
     
+    def add_names_advanced(self, url, map_names, font_size = 12, family = "Arial", colour="white", x_adj = 0, y_adj = 0):
+        d = self.d
+        for n in self.tree.traverse():
+            if n.name in map_names:
+                x_0, y_0 = n.x_coor, n.y_coor
+                p = draw.Text(map_names[n.name],font_size, x_0 + x_adj, y_0 + y_adj, center=False, fill=colour, font_family=family)
+                d.append(p)
+        d.saveSvg(url)
+        return(d)
+    
     def DrawOuter(self, url, stroke="white", stroke_width=1, radius = 3):
             
         spacing = self.width / (self.n_leaves + 1)        

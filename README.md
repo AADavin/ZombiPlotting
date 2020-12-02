@@ -1,2 +1,3 @@
 # ZombiPlotting
-Some scripts to plot Zombi results
+
+Just exploring this for now. 
